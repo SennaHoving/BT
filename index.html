@@ -10,7 +10,7 @@
     <form>
         <h2>title</h2>
         <fieldset>
-            <legend>1a</legend>
+            <legend>gegevens overledene</legend>
             <label for="voorletter(s)">voorletter(s)</label>
             <input type="text" id="voorletter(s)"/>
             <label for="tussenvoegsel(s)">tussenvoegsel(s)</label>
@@ -23,9 +23,6 @@
             <label for="overlijdensdatum">Overlijdensdatum</label>
             <input type="date" max="2026-02-16" id="overlijdensdatum" />
         </fieldset>
-
-        <fieldset>
-            <legend>1b</legend>
 
             <fieldset>
                 <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
@@ -67,10 +64,6 @@
                 <label for="voorwaarden">Datum huwelijkse of partnerschapsvoorwaarden</label>
                 <input type="date" max="2026-02-16" id="voorwaarden" />
             </div>
-        </fieldset>
-
-        <fieldset>
-            <legend>1c</legend>
 
             <fieldset>
                 <legend>Had de overledene kinderen?</legend>
@@ -84,7 +77,7 @@
                 </label>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="hidden">
                 <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</legend>
                 <label>
                     Nee
@@ -96,7 +89,7 @@
                 </label>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="hidden">
                 <legend>Had dit overleden kind zelf kinderen?</legend>
                 <label>
                     Nee
@@ -107,10 +100,7 @@
                     <input type="radio" value="Ja" name="overleden_kind"/> 
                 </label>
             </fieldset>
-        </fieldset>
 
-        <fieldset>
-            <legend>1d</legend>
 
             <fieldset id="testament">
                 <legend>Had de overledene een testament?</legend>
@@ -120,7 +110,7 @@
                 </label>
                 <label>
                     Ja
-                    <input type="radio" value="Ja" name="testament"/> 
+                    <input type="radio" value="Ja" name="testament" id="testament_aanwezig"/> 
                 </label>
             </fieldset> 
         
