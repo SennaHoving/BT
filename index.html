@@ -4,8 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BT</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
+    <form>
+        <h2>title</h2>
+        <fieldset>
+            <legend>1a</legend>
+            <label for="voorletter(s)">voorletter(s)</label>
+            <input type="text" id="voorletter(s)"/>
+            <label for="tussenvoegsel(s)">tussenvoegsel(s)</label>
+            <input type="text" id="tussenvoegsel(s)"/>
+            <label for="achternaam">achternaam</label>
+            <input type="text" id="achternaam"/> 
+
+            <label for="bsn">Bsn overledene</label>
+            <input type="number" id="bsn" />
+            <label for="overlijdensdatum">Overlijdensdatum</label>
+            <input type="date" max="2026-02-16" id="overlijdensdatum" />
+        </fieldset>
+
+        <fieldset>
+            <legend>1b</legend>
+
+            <fieldset>
+                <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
+                <label>
+                    Nee
+                    <input type="radio" value="Nee" name="getrouwd"/> 
+                </label>
+                <label>
+                    Ja
+                    <input type="radio" value="Ja" name="getrouwd"/> 
+                </label>
+            </fieldset>
+
+            <fieldset class="hidden">
+                <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?</legend>
+                <label>
+                    Nee
+                    <input type="radio" value="Nee" name="partnerschapsvoorwaarden"/> 
+                </label>
+                <label>
+                    Ja
+                    <input type="radio" value="Ja" name="partnerschapsvoorwaarden"/> 
+                </label>
+            </fieldset>
+
+            <div class="hidden">
+                <fieldset >
+                    <legend>Hadden de overledene en diens partner een finaal verrekenbeding?</legend>
+                    <label>
+                        Nee
+                        <input type="radio" value="Nee" name="verrekenbeding"/> 
+                    </label>
+                    <label>
+                        Ja
+                        <input type="radio" value="Ja" name="verrekenbeding"/> 
+                    </label>
+                </fieldset>
+
+                <label for="voorwaarden">Datum huwelijkse of partnerschapsvoorwaarden</label>
+                <input type="date" max="2026-02-16" id="voorwaarden" />
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>1c</legend>
+
+            <fieldset>
+                <legend>Had de overledene kinderen?</legend>
+                <label>
+                    Nee
+                    <input type="radio" value="Nee" name="kinderen"/> 
+                </label>
+                <label>
+                    Ja
+                    <input type="radio" value="Ja" name="kinderen"/> 
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</legend>
+                <label>
+                    Nee
+                    <input type="radio" value="Nee" name="eerder"/> 
+                </label>
+                <label>
+                    Ja
+                    <input type="radio" value="Ja" name="eerder"/> 
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Had dit overleden kind zelf kinderen?</legend>
+                <label>
+                    Nee
+                    <input type="radio" value="Nee" name="overleden_kind"/> 
+                </label>
+                <label>
+                    Ja
+                    <input type="radio" value="Ja" name="overleden_kind"/> 
+                </label>
+            </fieldset>
+        </fieldset>
+
+        <fieldset>
+            <legend>1d</legend>
+
+            <fieldset id="testament">
+                <legend>Had de overledene een testament?</legend>
+                <label>
+                    Nee
+                    <input type="radio" value="Nee" name="testament"/> 
+                </label>
+                <label>
+                    Ja
+                    <input type="radio" value="Ja" name="testament"/> 
+                </label>
+            </fieldset> 
+        
+            <div class="hidden" id="testament_hidden">
+                <label for="Protocolnummer">Protocolnummer notaris</label>
+                <input type="number" id="Protocolnummer"/>
+
+                <label for="voorletter(s)">voorletter(s)</label>
+                <input type="text" id="voorletter(s)"/>
+                <label for="tussenvoegsel(s)">tussenvoegsel(s)</label>
+                <input type="text" id="tussenvoegsel(s)"/>
+                <label for="achternaam">achternaam</label>
+                <input type="text" id="achternaam"/> 
+            </div>
+    </form>
 </body>
+<script src="scripts/script.js"></script>
 </html>
