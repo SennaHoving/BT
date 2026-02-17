@@ -1,3 +1,5 @@
+const form = document.querySelector("form")
+
 const bsnField = document.querySelectorAll(".bsn") 
 const textFields = document.querySelectorAll(".text_only")
 const verkrijger = document.getElementById("verkrijger")
@@ -8,19 +10,17 @@ const overlijdensdatum = document.getElementById("overlijdensdatum")
 
 //Prevent characters
 //Number fields
-bsnField.forEach(field => {
-    field.addEventListener("keydown", (event) => {
+form.addEventListener("keydown", (event) => {
+    if(event.target.classList.contains("bsn"))
         if(isNaN(event.key) && event.key !== 'Backspace') {
             event.preventDefault();
         }
-    })
 })
 
 //Text fields
-textFields.forEach(field => {
-    field.addEventListener("input", () => {
-        field.value = field.value.replace(/[^\p{L}]/gu, "");
-    })
+form.addEventListener("input", (event) => {
+    if(event.target.classList.contains("text_only"))
+        event.target.value = event.target.value.replace(/[^\p{L}]/gu, "");
 })
 
 //Listener radio buttons 
