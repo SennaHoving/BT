@@ -3,6 +3,8 @@ const textFields = document.querySelectorAll(".text_only")
 const verkrijger = document.getElementById("verkrijger")
 const addVerkrijger = document.querySelector("#verkrijger button")
 let number = 2; 
+const date = new Date().toISOString().slice(0, 10)
+const overlijdensdatum = document.getElementById("overlijdensdatum")
 
 //Prevent characters
 //Number fields
@@ -45,14 +47,39 @@ function createNewVerkrijger() {
 
     newFieldset.appendChild(legend)
 
-    const input = document.createElement('input');
-    input.setAttribute('name', 'input');
-    input.setAttribute('type', 'text');
+    const label = document.createElement('label');
+    label.setAttribute('for', 'input');
+    label.innerText = 'Name';
 
+    const input = document.createElement('input');
+    input.setAttribute('type', 'text');
+    input.id = 'input'
+    input.required = true;
+    input.classList.add("text_only")
+
+    const radio1 = document.createElement('input');
+    radio1.setAttribute('value', 'Ja');  
+    radio1.setAttribute('type', 'radio');
+
+    const radio2 = document.createElement('input');
+    radio2.setAttribute('value', 'Nee');
+    radio2.setAttribute('type', 'radio');
+
+    newFieldset.appendChild(label)
     newFieldset.appendChild(input) 
+    newFieldset.appendChild(radio1) 
+    newFieldset.appendChild(radio2) 
+
     verkrijger.appendChild(newFieldset)
 }   
 
 addVerkrijger.addEventListener("click", () => {
     createNewVerkrijger()
 })
+
+//Load date
+function loadDate() {
+    overlijdensdatum.setAttribute("max", date)
+}
+
+loadDate();
