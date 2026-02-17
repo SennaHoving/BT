@@ -2,6 +2,7 @@ const bsnField = document.querySelectorAll(".bsn")
 const textFields = document.querySelectorAll(".text_only")
 const verkrijger = document.getElementById("verkrijger")
 const addVerkrijger = document.querySelector("#verkrijger button")
+let number = 2; 
 
 //Prevent characters
 //Number fields
@@ -39,7 +40,8 @@ document.addEventListener("change", function(e) {
 function createNewVerkrijger() {
     const newFieldset = document.createElement("fieldset") 
     const legend = document.createElement('legend') 
-    legend.textContent = "test"
+    legend.textContent = `verkrijger ${number}`
+    number++;
 
     newFieldset.appendChild(legend)
 
