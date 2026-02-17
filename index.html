@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <!-- School project-->
     <form>
         <h2>title</h2>
         <fieldset>
@@ -133,6 +134,32 @@
         </div>
 
         <button type="submit">Submit</button>
+
+        <!-- Sectie 3b -->
+        <fieldset>
+            <fieldset>
+                <legend>Zijn er verkrijgers voor wie u geen aangifte doet?</legend>
+                <label>
+                    Nee
+                    <input type="radio" value="Nee" name="testament" data-target="testament"/> 
+                </label>
+                <label>
+                    Ja
+                    <input type="radio" value="Ja" name="testament" data-target="testament"/> 
+                </label>
+            </fieldset> 
+
+            <fieldset id="verkrijger">
+                <fieldset>
+                    <legend>Verkrijger 1</legend>
+
+                    <label for="bsn">Bsn overledene</label>
+                    <input type="text" class="bsn" required id="bsn" inputmode="numeric" minlength="9" maxlength="9"/>
+
+                </fieldset>
+                <button type="button">Sup</button>
+            </fieldset>
+        </fieldset>
     </form>
 </body>
 <script src="scripts/script.js"></script>

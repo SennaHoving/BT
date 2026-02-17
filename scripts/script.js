@@ -1,5 +1,7 @@
 const bsnField = document.querySelector(".bsn") 
 const textFields = document.querySelectorAll(".text_only")
+const verkrijger = document.getElementById("verkrijger")
+const addVerkrijger = document.querySelector("#verkrijger button")
 
 //Prevent characters
 //Number fields
@@ -31,4 +33,18 @@ document.addEventListener("change", function(e) {
     }
 })
 
+//Verkrijger field gen
+function createNewVerkrijger() {
+    const newFieldset = document.createElement("fieldset") 
 
+    const input = document.createElement('input');
+    input.setAttribute('name', 'input');
+    input.setAttribute('type', 'text');
+
+    newFieldset.appendChild(input) 
+    verkrijger.appendChild(newFieldset)
+}   
+
+addVerkrijger.addEventListener("click", () => {
+    createNewVerkrijger()
+})
