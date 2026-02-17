@@ -133,7 +133,7 @@
             <input type="text" id="datum_testament"/> 
         </div>
 
-        <button type="submit">Submit</button>
+        <!-- <button type="submit">Submit</button> -->
 
         <!-- Sectie 3b -->
         <fieldset>
@@ -141,15 +141,15 @@
                 <legend>Zijn er verkrijgers voor wie u geen aangifte doet?</legend>
                 <label>
                     Nee
-                    <input type="radio" value="Nee" name="testament" data-target="testament"/> 
+                    <input type="radio" value="Nee" name="testament" data-target="verkrijger"/> 
                 </label>
                 <label>
                     Ja
-                    <input type="radio" value="Ja" name="testament" data-target="testament"/> 
+                    <input type="radio" value="Ja" name="testament" data-target="verkrijger"/> 
                 </label>
             </fieldset> 
 
-            <fieldset id="verkrijger">
+            <fieldset id="verkrijger" class="hidden">
                 <fieldset>
                     <legend>Verkrijger 1</legend>
 
@@ -187,7 +187,7 @@
                         </label>
                     </fieldset>
                 </fieldset>
-                <button type="button">Niew</button>
+                <button type="button">Niewe verkrijger</button>
             </fieldset>
         </fieldset>
     </form>

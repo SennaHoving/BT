@@ -29,7 +29,6 @@ document.addEventListener("change", function(e) {
         const targetId = document.getElementById(e.target.dataset.target)
 
         if(e.target.value == "Ja") {
-            console.log(targetId)
             targetId.classList.remove("hidden")
             //maak het deel hierbij ook nog required? 
         } else {
