@@ -1,14 +1,16 @@
-const bsnField = document.querySelector(".bsn") 
+const bsnField = document.querySelectorAll(".bsn") 
 const textFields = document.querySelectorAll(".text_only")
 const verkrijger = document.getElementById("verkrijger")
 const addVerkrijger = document.querySelector("#verkrijger button")
 
 //Prevent characters
 //Number fields
-bsnField.addEventListener("keydown", event => {
-    if(isNaN(event.key) && event.key !== 'Backspace') {
-        event.preventDefault();
-    }
+bsnField.forEach(field => {
+    field.addEventListener("keydown", (event) => {
+        if(isNaN(event.key) && event.key !== 'Backspace') {
+            event.preventDefault();
+        }
+    })
 })
 
 //Text fields
@@ -36,6 +38,10 @@ document.addEventListener("change", function(e) {
 //Verkrijger field gen
 function createNewVerkrijger() {
     const newFieldset = document.createElement("fieldset") 
+    const legend = document.createElement('legend') 
+    legend.textContent = "test"
+
+    newFieldset.appendChild(legend)
 
     const input = document.createElement('input');
     input.setAttribute('name', 'input');
