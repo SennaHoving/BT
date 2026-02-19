@@ -38,7 +38,7 @@ document.addEventListener("change", function(e) {
 })
 
 //Verkrijger field gen
-function createNewVerkrijger() {
+function createNewVerkrijger() {    
     const newFieldset = document.createElement("fieldset") 
     const legend = document.createElement('legend') 
     legend.textContent = `verkrijger ${number}`
@@ -139,6 +139,12 @@ function createNewVerkrijger() {
     radio4.setAttribute('type', 'radio');
     radio4.id = 'radio4'
 
+    //Remove button
+    const remove = document.createElement("button") 
+    remove.setAttribute("type", "button") 
+    remove.classList.add("remove")
+    remove.innerText = "remove"
+
     newFieldset.appendChild(labelBsn)
     newFieldset.appendChild(inputBsn) 
 
@@ -164,11 +170,18 @@ function createNewVerkrijger() {
     newFieldset.appendChild(fieldSetV1)
     newFieldset.appendChild(fieldSetV2)
 
+    newFieldset.appendChild(remove)
+
     verkrijger.appendChild(newFieldset)
 }   
 
 addVerkrijger.addEventListener("click", () => {
     createNewVerkrijger()
+})
+
+form.addEventListener("click", (e) => {
+    if(e.target.classList.contains("remove"))
+        e.target.closest("fieldset").remove();
 })
 
 //Load date
