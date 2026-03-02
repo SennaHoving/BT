@@ -96,6 +96,10 @@ fieldset:has(> label input[type="radio"]) {
 	gap: 0.5em; 
 }
 
+fieldset:has(> label input[type="radio"]) legend {
+	margin-bottom: 0.3em;
+}
+
 fieldset:has(> input[type="radio"]) {
 	display: flex; 
 	flex-direction: row; 
@@ -137,6 +141,7 @@ fieldset label {
 	flex-direction: column; 
 	gap: 0.5em;
 	font-weight: 600; 
+	width: 100%; 
 }
 
 button {
@@ -148,9 +153,21 @@ button {
 	border-radius: var(--border-default); 
 }
 
+section div:has(input[type="text"]) {
+	display: flex; 
+	flex-direction: row; 
+	gap: 1em; 
+}
+
 #verkrijger {
 	position: relative; 
 	padding-bottom: 3em;
+}
+
+#verkrijger > fieldset {
+	display: flex; 
+	flex-direction: column; 
+	gap: 1em;
 }
 
 #verkrijger > div {
