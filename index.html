@@ -13,15 +13,13 @@
         <h1>Aangifte 2026 erfbelasting</h1>
         <fieldset>
             <legend>gegevens overledene</legend>
-            <div>
-                <label for="voorletter(s)">
-                    voorletter(s)
-                    <input type="text" required id="voorletter(s)" class="text_only"/>
-                </label>
-                <label for="tussenvoegsel(s)">tussenvoegsel(s)
-                    <input type="text" required id="tussenvoegsel(s)" class="text_only"/>
-                </label>
-            </div>
+            <label for="voorletter(s)">
+                voorletter(s)
+                <input type="text" required id="voorletter(s)" class="text_only"/>
+            </label>
+            <label for="tussenvoegsel(s)">tussenvoegsel(s)
+                <input type="text" required id="tussenvoegsel(s)" class="text_only"/>
+            </label>
             <label for="achternaam">achternaam
                 <input type="text" required id="achternaam" class="text_only"/> 
             </label>
@@ -141,21 +139,17 @@
         </div>
 
         <!-- Sectie 3b -->
-        <br><br><br>
-
-        <fieldset class="vraag3b">
+        <section>
             <fieldset>
                 <legend>Zijn er verkrijgers voor wie u geen aangifte doet?</legend>
-                <div>
-                    <label>
-                        <input type="radio" value="Nee" name="testament" data-target="verkrijger"/> 
-                        Nee
-                    </label>
-                    <label>
-                        <input type="radio" value="Ja" name="testament" data-target="verkrijger"/> 
-                        Ja                    
-                    </label>
-                </div>
+                <label>
+                    <input type="radio" value="Nee" name="testament" data-target="verkrijger"/> 
+                    Nee
+                </label>
+                <label>
+                    <input type="radio" value="Ja" name="testament" data-target="verkrijger"/> 
+                    Ja                    
+                </label>
             </fieldset> 
 
             <fieldset id="verkrijger" class="hidden">
@@ -166,14 +160,12 @@
                         <input type="text" class="bsn" required id="bsn" inputmode="numeric" minlength="9" maxlength="9"/>
                     </label>
 
-                    <div>
-                        <label for="voorletter(s)">voorletter(s)
-                            <input type="text" required id="voorletter(s)" class="text_only"/>
-                        </label>
-                        <label for="tussenvoegsel(s)">tussenvoegsel(s)
-                            <input type="text" required id="tussenvoegsel(s)" class="text_only"/>
-                        </label>
-                    </div>
+                    <label for="voorletter(s)">voorletter(s)
+                        <input type="text" required id="voorletter(s)" class="text_only"/>
+                    </label>
+                    <label for="tussenvoegsel(s)">tussenvoegsel(s)
+                        <input type="text" required id="tussenvoegsel(s)" class="text_only"/>
+                    </label>
                     <label for="achternaam">achternaam
                         <input type="text" required id="achternaam" class="text_only"/> 
                     </label>
@@ -181,12 +173,12 @@
                     <fieldset>
                         <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</legend>
                         <label>
-                            Nee
                             <input type="radio" value="Nee"/> 
+                            Nee
                         </label>
                         <label>
-                            Ja
                             <input type="radio" value="Ja"/> 
+                            Ja
                         </label>
                     </fieldset>
 
@@ -204,7 +196,7 @@
                 </fieldset>
                 <button type="button">Niewe verkrijger</button>
             </fieldset>
-        </fieldset>
+        </section>
     </form>
 </body>
 <script src="scripts/script.js"></script>

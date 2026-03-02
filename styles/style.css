@@ -52,6 +52,7 @@ table {
 :root {
 	--color-primary: #ffc917; 
 	--color-secondary: #003082; 
+	--color-secondary-shade: #0063d3; 
 	--color-grey: #c2c2c2;
 
 	--body-s: 0.875em; 
@@ -83,9 +84,27 @@ form {
     display: none; 
 }
 
-fieldset label {
-	color: var(--color-secondary); 
-	font-size: var(--text-s);
+form > fieldset {
+	display: flex; 
+	flex-direction: column; 
+	gap: 1em;
+}
+
+section fieldset:first-of-type, section fieldset fieldset:first-of-type {
+	display: flex; 
+	flex-direction: column; 
+}
+
+fieldset:has(> label input[type="radio"]) {
+	display: flex; 
+	flex-direction: row; 
+	gap: 0.5em; 
+}
+
+fieldset:has(> input[type="radio"]) {
+	display: flex; 
+	flex-direction: row; 
+	gap: 0.5em; 
 }
 
 fieldset input[type="text"], fieldset input[type="date"] {
@@ -96,72 +115,41 @@ fieldset input[type="text"], fieldset input[type="date"] {
 }
 
 fieldset input[type="radio"] {
-	accent-color: var(--color-secondary)
-}
-
-
-fieldset:first-of-type legend {
-	font-size: var(--heading1);
-}
-
-fieldset:nth-of-type(1) {
-	display: flex; 
-	flex-direction: column; 
-	gap: 1em;
-}
-
-fieldset:nth-of-type(1) div:first-of-type {
-	display: flex; 
-	flex-direction: row; 
-	gap: 1em;
-}
-
-form > fieldset:nth-of-type(1) label {
-	display: flex; 
-	flex-direction: column; 
-	gap: 0.5em; 
-	font-weight: 600; 
-	width: 100%; 
-}
-
-/* vraag 3b */ 
-form .vraag3b legend {
-	font-size: var(--body-m);
-}
-
-form .vraag3b fieldset:first-of-type div {
-	display: flex; 
-	gap: 0.5em; 
-	justify-content: start;
-	flex-direction: row; 
-}
-
-form .vraag3b fieldset:first-of-type label input {
 	display: none; 
 }
 
-form .vraag3b fieldset:first-of-type label {
-	color: black; 
+fieldset label:has(input[type="radio"]) {
+	color: #000; 
+	display: flex; 
+	flex-direction: row-reverse; 
+	justify-content: start;
 	width: 4em; 
 	padding: 8px; 
 	border-radius: var(--border-default); 
 	border: 2px solid var(--color-grey); 
 }
- 
-form .vraag3b fieldset:first-of-type label:has(input:checked) {
+
+fieldset label:has(input[type="radio"]:checked) {
 	border: none; 
 	background: var(--color-secondary); 
 	color: white; 
 }
 
-form .vraag3b fieldset:nth-of-type(2) label {
+fieldset label {
+	color: var(--color-secondary); 
+	font-size: var(--text-s);
 	display: flex; 
-	align-items: start; 
-	justify-content: center;
-	gap: 0.25em; 
-	font-size: var(--body-m);
 	flex-direction: column; 
-	gap: 0.5em; 
-	font-weight: 600;
-	width: 100%; 
+	gap: 0.5em;
+	font-weight: 600; 
 }
+
+button {
+	background-color: var(--color-secondary-shade); 
+	border: none; 
+	padding: 8px; 
+	color: white; 
+	font-size: var(--body-m);
+	border-radius: var(--border-default); 
+}
+
