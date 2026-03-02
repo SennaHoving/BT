@@ -49,11 +49,95 @@ table {
 	border-spacing: 0;
 }
 
+:root {
+	--color-primary: #ffc917; 
+	--color-secondary: #003082; 
+	--color-border: #c2c2c2;
+
+	--body-s: 0.875em; 
+	--body-m: 1em; 
+	--body-l: 1.125em; 
+	
+	--heading1: 22px; 
+	--heading2: 18px; 
+
+	--border-default: 6px; 
+}
+
 /* Styling */ 
 body {
     font-family: 'roboto', 'sans-serif'; 
 }
 
+body > div {
+	background-color: white; 
+	height: 10vh; 
+}
+
+form {
+	max-width: 1200px; 
+	margin: 0 1em; 
+}
+
 .hidden {
     display: none; 
+}
+
+fieldset label {
+	color: var(--color-secondary); 
+	font-size: var(--text-s);
+}
+
+fieldset input[type="text"], fieldset input[type="date"] {
+	border: 1px solid var(--color-border);
+	border-radius: var(--border-default); 
+	height: 2.5em;
+	width: 100%;
+}
+
+fieldset input[type="radio"] {
+	accent-color: var(--color-secondary)
+}
+
+
+fieldset:first-of-type legend {
+	font-size: var(--heading1);
+}
+
+fieldset:nth-of-type(1) {
+	display: flex; 
+	flex-direction: column; 
+	gap: 1em;
+}
+
+fieldset:nth-of-type(1) div:first-of-type {
+	display: flex; 
+	flex-direction: row; 
+	gap: 1em;
+}
+
+form > fieldset:nth-of-type(1) label {
+	display: flex; 
+	flex-direction: column; 
+	gap: 0.5em; 
+	font-weight: 600; 
+	width: 100%; 
+}
+
+/* vraag 3b */ 
+form .vraag3b label {
+	display: flex; 
+	align-items: start; 
+	justify-content: center;
+	gap: 0.25em; 
+	font-size: var(--body-m);
+	flex-direction: column; 
+	gap: 0.5em; 
+	font-weight: 600;
+	width: 100%; 
+}
+
+form .vraag3b legend {
+	font-size: var(--body-m);
+	
 }
