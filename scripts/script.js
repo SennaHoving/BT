@@ -97,22 +97,22 @@ function createNewVerkrijger() {
     fieldSetV1.appendChild(legendV1)
 
     const labelRadio1 = document.createElement('label')
-    labelRadio1.setAttribute('for', 'radio1');
     labelRadio1.innerText = 'Nee'; 
 
     const radio1 = document.createElement('input');
     radio1.setAttribute('value', 'Ja');  
     radio1.setAttribute('type', 'radio');
-    radio1.id = 'radio1'
+
+    labelRadio1.prepend(radio1)
 
     const labelRadio2 = document.createElement('label')
-    labelRadio2.setAttribute('for', 'radio2');
     labelRadio2.innerText = 'Ja'; 
 
     const radio2 = document.createElement('input');
     radio2.setAttribute('value', 'Ja');  
-    radio2.setAttribute('type', 'radio');
-    radio2.id = 'radio2'
+    radio2.setAttribute('type', 'radio'); 
+
+    labelRadio2.prepend(radio2)
 
 
     // Vraag 2 
@@ -158,10 +158,8 @@ function createNewVerkrijger() {
     newFieldset.appendChild(inputAchternaam) 
 
     fieldSetV1.appendChild(labelRadio1)
-    fieldSetV1.appendChild(radio1) 
     fieldSetV1.appendChild(labelRadio2)
-    fieldSetV1.appendChild(radio2) 
-
+    
     fieldSetV2.appendChild(labelRadio3)
     fieldSetV2.appendChild(radio3) 
     fieldSetV2.appendChild(labelRadio4)

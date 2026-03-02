@@ -90,11 +90,6 @@ form > fieldset {
 	gap: 1em;
 }
 
-section fieldset:first-of-type, section fieldset fieldset:first-of-type {
-	display: flex; 
-	flex-direction: column; 
-}
-
 fieldset:has(> label input[type="radio"]) {
 	display: flex; 
 	flex-direction: row; 
@@ -153,3 +148,12 @@ button {
 	border-radius: var(--border-default); 
 }
 
+#verkrijger {
+	position: relative; 
+	padding-bottom: 3em;
+}
+
+#verkrijger > div {
+	position: absolute; 
+	bottom: 0; 
+}
