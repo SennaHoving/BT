@@ -8,6 +8,49 @@ let number = 2;
 const date = new Date().toISOString().slice(0, 10)
 const overlijdensdatum = document.getElementById("overlijdensdatum")
 
+const inputs = document.querySelectorAll("input"); 
+
+//Local storage
+inputs.forEach((input) => {
+    input.addEventListener("change", () => {
+        if (input.type === 'radio') {
+            localStorage.setItem(input.name, input.value) 
+        } else {
+            localStorage.setItem(input.id, input.value) 
+        }   
+    })
+    
+    if (input.type === 'radio') {
+        const ant = localStorage.getItem(input.name);
+        console.log(ant)
+        if (ant === input.value) {
+            input.checked = true; 
+        }
+    } else {
+        const ant = localStorage.getItem(input.id);
+        input.value = ant; 
+    }
+})
+
+window.onload = () => {
+    console.log('sup')
+
+    inputs.forEach((input) => {
+        if (input.type === 'radio') {
+            const targetId = document.getElementById(input.dataset.target)
+            const radioValue = localStorage.getItem(input.name);
+
+            if(input.value == radioValue) {
+                if(radioValue === "Ja") {
+                    targetId?.classList.remove("hidden")
+                } else {
+                    targetId?.classList.add("hidden")
+                }
+            }
+        }
+    })
+}
+
 //Prevent characters
 //Number fields
 form.addEventListener("keydown", (event) => {
