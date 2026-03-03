@@ -1,5 +1,4 @@
 const form = document.querySelector("form")
-
 const bsnField = document.querySelectorAll(".bsn") 
 const textFields = document.querySelectorAll(".text_only")
 const verkrijger = document.getElementById("verkrijger")
@@ -7,8 +6,9 @@ const addVerkrijger = document.querySelector("#verkrijger button")
 let number = 2; 
 const date = new Date().toISOString().slice(0, 10)
 const overlijdensdatum = document.getElementById("overlijdensdatum")
-
 const inputs = document.querySelectorAll("input"); 
+
+
 
 //Local storage
 inputs.forEach((input) => {
@@ -22,7 +22,6 @@ inputs.forEach((input) => {
     
     if (input.type === 'radio') {
         const ant = localStorage.getItem(input.name);
-        console.log(ant)
         if (ant === input.value) {
             input.checked = true; 
         }
@@ -33,8 +32,6 @@ inputs.forEach((input) => {
 })
 
 window.onload = () => {
-    console.log('sup')
-
     inputs.forEach((input) => {
         if (input.type === 'radio') {
             const targetId = document.getElementById(input.dataset.target)
@@ -53,18 +50,18 @@ window.onload = () => {
 
 //Prevent characters
 //Number fields
-form.addEventListener("keydown", (event) => {
-    if(event.target.classList.contains("bsn"))
-        if(isNaN(event.key) && event.key !== 'Backspace') {
-            event.preventDefault();
-        }
-})
+// form.addEventListener("keydown", (event) => {
+//     if(event.target.classList.contains("bsn"))
+//         if(isNaN(event.key) && event.key !== 'Backspace') {
+//             event.preventDefault();
+//         }
+// })
 
-//Text fields
-form.addEventListener("input", (event) => {
-    if(event.target.classList.contains("text_only"))
-        event.target.value = event.target.value.replace(/[^\p{L}]/gu, "");
-})
+// //Text fields
+// form.addEventListener("input", (event) => {
+//     if(event.target.classList.contains("text_only"))
+//         event.target.value = event.target.value.replace(/[^\p{L}]/gu, "");
+// })
 
 //Listener radio buttons 
 document.addEventListener("change", function(e) {

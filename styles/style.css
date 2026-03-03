@@ -106,7 +106,7 @@ fieldset:has(> input[type="radio"]) {
 	gap: 0.5em; 
 }
 
-fieldset input[type="text"], fieldset input[type="date"] {
+fieldset input[type="text"], input[type="date"], fieldset input[type="number"] {
 	border: 1px solid var(--color-grey);
 	border-radius: var(--border-default); 
 	height: 2.5em;
@@ -152,6 +152,10 @@ button {
 	font-size: var(--body-m);
 	border-radius: var(--border-default); 
 }
+
+/* input:invalid {
+	background-color: red; 
+} */
 
 form > fieldset:first-of-type div {
 	display: flex; 

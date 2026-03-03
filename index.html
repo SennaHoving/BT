@@ -15,17 +15,17 @@
             <legend>gegevens overledene</legend>
             <div>
                 <label for="voorletter(s)">voorletter(s)
-                    <input type="text" required id="voorletter(s)" class="text_only"/>
+                    <input type="text" required id="voorletter(s)" class="text_only" pattern="^[\p{L}][\p{L}\p{M} '\-]*$"/>
                 </label>
                 <label for="tussenvoegsel(s)">tussenvoegsel(s)
-                    <input type="text" required id="tussenvoegsel(s)" class="text_only"/>
+                    <input type="text" id="tussenvoegsel(s)" class="text_only" pattern="^[\p{L}][\p{L}\p{M} '\-]*$"/>
                 </label>
             </div>
             <label for="achternaam">achternaam
-                <input type="text" required id="achternaam" class="text_only"/> 
+                <input type="text" required id="achternaam" class="text_only" pattern="^[\p{L}][\p{L}\p{M} '\-]*$"/> 
             </label>
             <label for="bsn">Bsn overledene
-                <input type="text" class="bsn" required id="bsn" inputmode="numeric" minlength="9" maxlength="9"/>
+                <input type="text" class="bsn" required id="bsn" inputmode="numeric" minlength="9" maxlength="9" pattern="[0-9]{9}"/>
             </label>
             <label for="overlijdensdatum">Overlijdensdatum
                 <input type="date" max="2026-02-16" id="overlijdensdatum" />
@@ -69,8 +69,9 @@
                 </label>
             </fieldset>
 
-            <label for="voorwaarden">Datum huwelijkse of partnerschapsvoorwaarden</label>
-            <input type="date" max="2026-02-16" id="voorwaarden" />
+            <label for="voorwaarden">Datum huwelijkse of partnerschapsvoorwaarden
+                <input type="date" max="2026-02-16" id="voorwaarden" />
+            </label>
         </div>
 
         <fieldset>
@@ -122,22 +123,30 @@
             </label>
         </fieldset> 
     
-        <div class="hidden" id="testament">
-            <label for="Protocolnummer">Protocolnummer notaris</label>
-            <input type="number" id="Protocolnummer"/>
+        <fieldset class="hidden" id="testament">
+            <label for="Protocolnummer">Protocolnummer notaris
+                <input type="number" id="Protocolnummer"/>
+            </label>
 
-            <label for="voorletter(s)">voorletter(s)</label>
-            <input type="text" id="voorletter(s)"/>
-            <label for="tussenvoegsel(s)">tussenvoegsel(s)</label>
-            <input type="text" id="tussenvoegsel(s)"/>
-            <label for="achternaam">achternaam</label>
-            <input type="text" id="achternaam"/> 
+            <div>
+                <label for="voorletter(s)">voorletter(s)
+                    <input type="text" id="voorletter(s)"/>
+                </label>
+                <label for="tussenvoegsel(s)">tussenvoegsel(s)
+                    <input type="text" id="tussenvoegsel(s)"/>
+                </label>
+            </div>
+            <label for="achternaam">achternaam
+                <input type="text" id="achternaam"/> 
+            </label>
 
-            <label for="vestigingsplaats">Vestigingsplaats</label>
-            <input type="text" id="vestigingsplaats"/> 
-            <label for="datum_testament">Datum van het testament of van de laatste wijziging</label>
-            <input type="text" id="datum_testament"/> 
-        </div>
+            <label for="vestigingsplaats">vestigingsplaats
+                <input type="text" id="vestigingsplaats"/> 
+            </label>
+            <label for="datum_testament">Datum van het testament of van de laatste wijziging
+                <input type="text" id="datum_testament"/> 
+            </label>
+        </fieldset>
 
         <!-- Sectie 3b -->
         <section>
@@ -201,6 +210,7 @@
                 </div>
             </fieldset>
         </section>
+        <button type="submit"></button>
     </form>
 </body>
 <script src="scripts/script.js"></script>
