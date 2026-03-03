@@ -8,21 +8,28 @@ let number = 2;
 const date = new Date().toISOString().slice(0, 10)
 const overlijdensdatum = document.getElementById("overlijdensdatum")
 
-const achternaamField = document.getElementById("achternaam")
-const storedAchternaam = localStorage.getItem("achternaam")
-
 const inputs = document.querySelectorAll("input"); 
 
 //Local storage
 inputs.forEach((input) => {
-    input.addEventListener("blur", (e) => {
-        console.log(input.id, input.value)
-        localStorage.setItem(input.id, input.value)
-        console.log(localStorage.getItem(input.id))
+    input.addEventListener("change", () => {
+        if (input.type === 'radio') {
+            localStorage.setItem(input.name, input.value) 
+        } else {
+            localStorage.setItem(input.id, input.value) 
+        }   
     })
- 
-    const ant = localStorage.getItem(input.id);
-    input.value = ant
+    
+    if (input.type === 'radio') {
+        const ant = localStorage.getItem(input.name);
+        console.log(ant)
+        if (ant === input.value) {
+            input.checked = true; 
+        }
+    } else {
+        const ant = localStorage.getItem(input.id);
+        input.value = ant; 
+    }
 })
 
 //Prevent characters
