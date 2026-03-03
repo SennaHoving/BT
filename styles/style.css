@@ -113,11 +113,11 @@ fieldset input[type="text"], fieldset input[type="date"] {
 	width: 100%;
 }
 
-fieldset input[type="radio"] {
+/* fieldset input[type="radio"] {
 	display: none; 
-}
+} */
 
-fieldset label:has(input[type="radio"]) {
+/* fieldset label:has(input[type="radio"]) {
 	color: #000; 
 	display: flex; 
 	flex-direction: row-reverse; 
@@ -126,7 +126,7 @@ fieldset label:has(input[type="radio"]) {
 	padding: 8px; 
 	border-radius: var(--border-default); 
 	border: 2px solid var(--color-grey); 
-}
+} */
 
 fieldset label:has(input[type="radio"]:checked) {
 	border: none; 
@@ -151,6 +151,11 @@ button {
 	color: white; 
 	font-size: var(--body-m);
 	border-radius: var(--border-default); 
+}
+
+form > fieldset:first-of-type div {
+	display: flex; 
+	gap: 1em;
 }
 
 section div:has(input[type="text"]) {
