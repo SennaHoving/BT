@@ -32,6 +32,25 @@ inputs.forEach((input) => {
     }
 })
 
+window.onload = () => {
+    console.log('sup')
+
+    inputs.forEach((input) => {
+        if (input.type === 'radio') {
+            const targetId = document.getElementById(input.dataset.target)
+            const radioValue = localStorage.getItem(input.name);
+
+            if(input.value == radioValue) {
+                if(radioValue === "Ja") {
+                    targetId?.classList.remove("hidden")
+                } else {
+                    targetId?.classList.add("hidden")
+                }
+            }
+        }
+    })
+}
+
 //Prevent characters
 //Number fields
 form.addEventListener("keydown", (event) => {
