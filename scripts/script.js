@@ -11,6 +11,9 @@ const overlijdensdatum = document.getElementById("overlijdensdatum")
 const achternaamField = document.getElementById("achternaam")
 const storedAchternaam = localStorage.getItem("achternaam")
 
+const inputs = document.querySelectorAll("input"); 
+let antwoorden = localStorage.getItem('antwoorden') ? JSON.parse(localStorage.getItem('antwoorden')) : [];
+
 //Local storage
 achternaamField.addEventListener("blur", (e) => {
     localStorage.setItem("achternaam", e.target.value)
@@ -18,7 +21,18 @@ achternaamField.addEventListener("blur", (e) => {
 
 window.onload = () => {
     achternaamField.value = storedAchternaam
+    console.log(antwoorden)
+    // localStorage.clear(antwoorden)
 }
+
+inputs.forEach((input) => {
+    input.addEventListener("blur", (e) => {
+        console.log(input.id, input.value)
+        const nieuwAntwoord = [input.id, input.value]
+        antwoorden.push(nieuwAntwoord)
+        localStorage.setItem('antwoorden', JSON.stringify(antwoorden))
+    })
+})
 
 //Prevent characters
 //Number fields
