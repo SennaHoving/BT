@@ -8,6 +8,18 @@ let number = 2;
 const date = new Date().toISOString().slice(0, 10)
 const overlijdensdatum = document.getElementById("overlijdensdatum")
 
+const achternaamField = document.getElementById("achternaam")
+const storedAchternaam = localStorage.getItem("achternaam")
+
+//Local storage
+achternaamField.addEventListener("blur", (e) => {
+    localStorage.setItem("achternaam", e.target.value)
+})
+
+window.onload = () => {
+    achternaamField.value = storedAchternaam
+}
+
 //Prevent characters
 //Number fields
 form.addEventListener("keydown", (event) => {
