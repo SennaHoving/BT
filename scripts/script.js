@@ -14,11 +14,6 @@ const storedAchternaam = localStorage.getItem("achternaam")
 const inputs = document.querySelectorAll("input"); 
 let antwoorden = localStorage.getItem('antwoorden') ? JSON.parse(localStorage.getItem('antwoorden')) : [];
 
-//Local storage
-achternaamField.addEventListener("blur", (e) => {
-    localStorage.setItem("achternaam", e.target.value)
-})
-
 window.onload = () => {
     achternaamField.value = storedAchternaam
     console.log(antwoorden)
