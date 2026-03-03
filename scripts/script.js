@@ -12,21 +12,17 @@ const achternaamField = document.getElementById("achternaam")
 const storedAchternaam = localStorage.getItem("achternaam")
 
 const inputs = document.querySelectorAll("input"); 
-let antwoorden = localStorage.getItem('antwoorden') ? JSON.parse(localStorage.getItem('antwoorden')) : [];
 
-window.onload = () => {
-    achternaamField.value = storedAchternaam
-    console.log(antwoorden)
-    // localStorage.clear(antwoorden)
-}
-
+//Local storage
 inputs.forEach((input) => {
     input.addEventListener("blur", (e) => {
         console.log(input.id, input.value)
-        const nieuwAntwoord = [input.id, input.value]
-        antwoorden.push(nieuwAntwoord)
-        localStorage.setItem('antwoorden', JSON.stringify(antwoorden))
+        localStorage.setItem(input.id, input.value)
+        console.log(localStorage.getItem(input.id))
     })
+ 
+    const ant = localStorage.getItem(input.id);
+    input.value = ant
 })
 
 //Prevent characters
