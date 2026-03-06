@@ -26,3 +26,34 @@ In de ochtend vooral bezig geweest met de input fields, de rest van de middag be
 Vandaag geleerd over alle dingen die eigenlijk bij input fields komen kijken, en dat het type daar ook (vooral bij mobiel) voor uitmaakt. En dat elementen creeëren in java op twee manieren kan. 
 
 Volgende week wil ik verder met een functie die de verkrijgers die ik nu aanmaak ook weer kan verwijderen, en nog kijken naar de ns styling van de pagina. 
+
+### ma 02/03 
+Vooral gewerkt aan de styling van de page, de input velden gingen vrij makkelijk met has, de radio buttons waren lastiger. 
+
+In de ochtend vooral gekeken naar de algemene styling van de page, vervolgens bezig geweest met de radio buttons
+
+vandaag geleerd over hoeveel makkelijke het met has eigenlijk allemaal is, hoe veel algemenere css je er me kan schrijven
+
+morgen wil ik verder met styling, en kijken naar local storage. 
+
+### di 03/03 
+Lisa
+vandaag weekly geek, en gewerkt aan local storage. de local storage voor de text velden waren vrij simpel, de radio button waren wat lastiger
+
+In de ochtend weekly geek, en workshop over validatie in javascript. De middag gewerkt aan local storage, en aan het einde nog aan het kijken naar validatie in html. 
+
+Bij de workshop geleerd over validatie in javascript, user-invalid en aria live. En de local storage begrijp ik nu beter. '
+
+Volgende week denk vooral nog styling afronden en validatie in html en css vervijnen. 
+
+
+### Bespreking 06/03
+Denk belangrijkste om uit de bespreking weg te halen is dat ik vooral de focus (in ieder geval volgende week) nog moet leggen op de styling, en goed moet kijken of de site ook nog zal werken mocht de javascript weg vallen. Verder punten: 
+- Kijken naar templating voor het genereren van de html elementen in javascript, werkt nu maar niet heel leesbaar. 
+- Via javascript het attribute hidden toevoegen zodat niet hidden is als de javascript weg valt.
+- Patterns zoals ik ze nu heb werken niet echt, je wilt ze eerder inzetten voor bijvoorbeeld het pattroon in voorletters. Niet velden zoals voornaam, omdat wat als de gebruiker zijn naam niet in kan vullen. 
+- CSS reset is best oud en misschien onnogdig. Mag ik wel gebruiken maar moet het wel kunnen uitleggen. 
+- Met css ::valid en user-valid kan alles van formulieren / fields stylen, heel veel verder gaat css niet qua validatie
+- Het is een goed idee om dingen alleen op te slaan in localstorage als die valid zijn. 
+- Kan nog kijken naar printsheet, met apparte styling file en vervolgende een @media web view only and print only.
+- Inplementeren extra / additionele informatie
