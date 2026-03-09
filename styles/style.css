@@ -12,48 +12,109 @@
     --cc-black-95: #f2f2f2;
     --cc-white: #fff;
 
-    --nes-core-color-yellow-50: rgba(252, 246, 232, 1);
-    --nes-core-color-yellow-100: rgba(250, 239, 199, 1);
-    --nes-core-color-yellow-200: rgba(247, 224, 146, 1);
-    --nes-core-color-yellow-300: rgba(244, 205, 86, 1);
-    --nes-core-color-yellow-400: rgba(238, 180, 8, 1);
-    --nes-core-color-yellow-500: rgba(214, 149, 0, 1);
-    --nes-core-color-yellow-600: rgba(182, 117, 0, 1);
-    --nes-core-color-yellow-700: rgba(138, 96, 0, 1);
-    --nes-core-color-yellow-800: rgba(100, 74, 7, 1);
-    --nes-core-color-yellow-900: rgba(72, 57, 19, 1);
-    --nes-core-color-yellow-950: rgba(41, 37, 15, 1);
+    --color-yellow-50: rgba(252, 246, 232, 1);
+    --color-yellow-100: rgba(250, 239, 199, 1);
+    --color-yellow-200: rgba(247, 224, 146, 1);
+    --color-yellow-300: rgba(244, 205, 86, 1);
+    --color-yellow-400: rgba(238, 180, 8, 1);
+    --color-yellow-500: rgba(214, 149, 0, 1);
+    --color-yellow-600: rgba(182, 117, 0, 1);
+    --color-yellow-700: rgba(138, 96, 0, 1);
+    --color-yellow-800: rgba(100, 74, 7, 1);
+    --color-yellow-900: rgba(72, 57, 19, 1);
+    --color-yellow-950: rgba(41, 37, 15, 1);
 
-    --nes-core-color-blue-50: rgba(239, 246, 255, 1);
-    --nes-core-color-blue-100: rgba(222, 237, 255, 1);
-    --nes-core-color-blue-200: rgba(191, 219, 254, 1);
-    --nes-core-color-blue-300: rgba(147, 197, 253, 1);
-    --nes-core-color-blue-400: rgba(97, 166, 251, 1);
-    --nes-core-color-blue-500: rgba(52, 138, 244, 1);
-    --nes-core-color-blue-600: rgba(24, 109, 220, 1);
-    --nes-core-color-blue-700: rgba(31, 85, 178, 1);
-    --nes-core-color-blue-800: rgba(30, 68, 141, 1);
-    --nes-core-color-blue-900: rgba(25, 51, 112, 1);
-    --nes-core-color-blue-950: rgba(24, 34, 63, 1);
+    --color-blue-50: rgba(239, 246, 255, 1);
+    --color-blue-100: rgba(222, 237, 255, 1);
+    --color-blue-200: rgba(191, 219, 254, 1);
+    --color-blue-300: rgba(147, 197, 253, 1);
+    --color-blue-400: rgba(97, 166, 251, 1);
+    --color-blue-500: rgba(52, 138, 244, 1);
+    --color-blue-600: rgba(24, 109, 220, 1);
+    --color-blue-700: rgba(31, 85, 178, 1);
+    --color-blue-800: rgba(30, 68, 141, 1);
+    --color-blue-900: rgba(25, 51, 112, 1);
+    --color-blue-950: rgba(24, 34, 63, 1);
 
-    --nes-core-font-weight-normal: 400;
-    --nes-core-font-weight-demi: 550;
-    --nes-core-font-weight-bold: 700;
+    --font-weight-normal: 400;
+    --font-weight-demi: 550;
+    --font-weight-bold: 700;
 
-    --nes-core-border-radius-25: 1px;
-    --nes-core-border-radius-75: 3px;
-    --nes-core-border-radius-150: 6px;
-    --nes-core-border-radius-300: 12px;
-    --nes-core-border-radius-400: 16px;
-    --nes-core-border-radius-full: 9999px;
+	--font-size-xs: 0.75em; 
+	--font-size-s: 0.875em; 
+	--font-size-m: 1em; 
+	--font-size-l: 1.125em; 
 
-    --nes-core-max-width-2xl: 1280px;
-    --nes-core-max-width-xl: 896px;
-    --nes-core-max-width-lg: 512px;
-    --nes-core-max-width-xs: 320px;
+    --border-radius-25: 1px;
+    --border-radius-75: 3px;
+    --border-radius-150: 6px;
+    --border-radius-300: 12px;
+    --border-radius-400: 16px;
+    --border-radius-full: 9999px;
+
+    --max-width-2xl: 1280px;
+    --max-width-xl: 896px;
+    --max-width-lg: 512px;
+    --max-width-xs: 320px;
 }
 
 /* Styling */ 
+h1, h2, p, a {
+	margin: 0; 
+}
+
+.hidden {
+    display: none; 
+}
+
+/* styling form fields */
+fieldset {
+	position: relative; 
+}
+
+fieldset legend {
+	position: absolute; 
+	top: 1em; 
+	left: 1em; 
+	margin: 0; 
+	padding: 0;
+	display: contents;
+	color: var(--color-blue-900); 
+	font-size: var(--font-size-l); 
+	font-weight: var(--font-weight-bold);
+}
+
+fieldset:has(> label input[type="radio"]) {
+	display: flex; 
+	flex-direction: column; 
+	gap: 0.5em; 
+	border: none; 
+	padding: 0; 
+	margin: 0; 
+}
+
+fieldset input[type="text"], fieldset input[type="date"], fieldset input[type="number"] {
+	border: 1px solid var(--cc-black-95);
+	border-radius: var(--border-radius-150); 
+	height: 2.5em;
+	width: 100%;
+}
+
+input[type="text"]:user-invalid {
+	border-color: #db0029; 
+}
+
+label::after {
+	font-weight: var(--font-weight-normal);
+	font-size: var(--font-size-s);
+}
+
+label:has(input[type="text"]:user-invalid)::after {
+	content: "dit veld is verkeerd ingevuld";
+	color: #db0029;
+}
+
+/* general styling */ 
 body {
     font-family: 'roboto', 'sans-serif'; 
 	display: flex; 
@@ -63,92 +124,56 @@ body {
 	background-color: var(--cc-black-95);
 }
 
-body > div { 
-	background-color: var(--nes-core-color-blue-700); 
-	color: var(--nes-core-color-red); 
-	width: 100%;
-	padding: 0; 
-}
+/* body > div:first-of-type {
 
-body > div h2 {
-	color: var(--cc-white); 
-	margin: 0.5em auto; 
-	max-width: var(--nes-core-max-width-2xl);
-}
+} */
 
-body form > div {
-	background-color: white; 
-	padding: 1em; 
-	border-radius: var(--nes-core-border-radius-150); 
-	border-top: 8px var(--nes-core-color-yellow-300) solid; 
-	margin: 1em 0 0 0;
+form > div:first-of-type {
 	display: flex; 
 	flex-direction: column; 
 	gap: 1.5em;
+	background-color: white; 
+	padding: 1em; 
+	border-radius: var(--border-radius-150); 
+	border-top: 8px var(--color-yellow-300) solid; 
+	margin: 1em 0 0 0; 
 }
-
-body form > div h1 {
-	font-weight: var(--nes-core-font-weight-demi);
-	margin: 0; 
-}
-
-body form > div p {
-	margin: 0; 
-}
-
 
 form {
-	max-width: var(--nes-core-max-width-xl);
+	max-width: var(--max-width-xl);
 	width: 100%; 
 	margin: 0;
 	border: 1px var(--color-grey); 
-	border-radius: var(--nes-core-border-radius-150); 
+	border-radius: var(--border-radius-150); 
 	display: flex; 
 	flex-direction: column; 
 	gap: 1.5em;
 }
 
-.hidden {
-    display: none; 
-}
-
-form > fieldset {
+section {
 	display: flex; 
-	flex-direction: column; 
-	gap: 1em;
-	border: none; 
+	flex-direction: column;
+	gap: 1em; 
+}
+
+section > fieldset {
+	display: flex; 	
+	flex-direction: column;
+	gap: 1em; 
+	background-color: var(--cc-white);
 	margin: 0; 
-	padding: 1em; 
-	background-color: white; 
-	border-radius: var(--nes-core-border-radius-150); 
+	padding: 2em 1em 1em 1em;
 }
 
-fieldset:has(> label input[type="radio"]) {
-	border: none; 
-	padding: 0; 
-	margin: 0; 
-}
 
-fieldset:has(> input[type="radio"]) {
-	display: flex; 
-	flex-direction: row; 
-	gap: 0.5em; 
-}
 
-fieldset input[type="text"], input[type="date"], fieldset input[type="number"] {
-	border: 1px solid var(--cc-black-95);
-	border-radius: var(--nes-core-border-radius-150); 
-	height: 2.5em;
-	width: 100%;
-}
 
-fieldset label:has(input[type="radio"]:checked) {
-	border: none; 
-}
 
+
+/* -------- */ 
 fieldset label {
-	color: var(--nes-core-color-blue-900); 
-	font-size: var(--text-s);
+	color: var(--color-blue-900); 
+	font-size: var(--font-size-m);
 	display: flex; 
 	flex-direction: column; 
 	gap: 0.5em;
@@ -157,7 +182,7 @@ fieldset label {
 }
 
 fieldset label:has(input[type="radio"]) {
-	color: var(--nes-core-color-blue-900); 
+	color: var(--color-blue-900); 
 	font-size: var(--text-s);
 	display: block; 
 }
@@ -174,26 +199,18 @@ input:user-valid {
 	border: none; 
 }
 
-button {
-	background-color: var(--nes-core-color-blue-700); 
+/* button {
+	background-color: var(--color-blue-700); 
 	border: none; 
 	padding: 8px; 
 	color: white; 
 	font-size: var(--body-m);
-	border-radius: var(--nes-core-border-radius-150); 
-}
-
-/* input:invalid {
-	background-color: red; 
+	border-radius: var(--border-radius-150); 
 } */
 
 form > fieldset:first-of-type div {
 	display: flex; 
 	gap: 1em;
-}
-
-section {
-	background-color: white; 
 }
 
 section fieldset {
@@ -220,4 +237,9 @@ section div:has(input[type="text"]) {
 #verkrijger > div {
 	position: absolute; 
 	bottom: 0; 
+}
+
+/* temp */ 
+.verkrijgers {
+	display: none;
 }
