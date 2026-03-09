@@ -1,83 +1,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
 :root {
-	--color-primary: #ffc917; 
-	--color-secondary: #003082; 
-	--color-secondary-shade: #0063d3; 
-	--color-grey: #c2c2c2;
+    --cc-black-10: #1a1a1a;
+    --cc-black-20: #333;
+    --cc-black-30: #4d4d4d;
+    --cc-black-40: #666;
+    --cc-black-50: #808080;
+    --cc-black-60: #999;
+    --cc-black-80: #ccc;
+    --cc-black-90: #e5e5e5;
+    --cc-black-95: #f2f2f2;
+    --cc-white: #fff;
 
-	--body-s: 0.875em; 
-	--body-m: 1em; 
-	--body-l: 1.125em; 
-	
-	--heading1: 22px; 
-	--heading2: 18px; 
+    --nes-core-color-yellow-50: rgba(252, 246, 232, 1);
+    --nes-core-color-yellow-100: rgba(250, 239, 199, 1);
+    --nes-core-color-yellow-200: rgba(247, 224, 146, 1);
+    --nes-core-color-yellow-300: rgba(244, 205, 86, 1);
+    --nes-core-color-yellow-400: rgba(238, 180, 8, 1);
+    --nes-core-color-yellow-500: rgba(214, 149, 0, 1);
+    --nes-core-color-yellow-600: rgba(182, 117, 0, 1);
+    --nes-core-color-yellow-700: rgba(138, 96, 0, 1);
+    --nes-core-color-yellow-800: rgba(100, 74, 7, 1);
+    --nes-core-color-yellow-900: rgba(72, 57, 19, 1);
+    --nes-core-color-yellow-950: rgba(41, 37, 15, 1);
 
-	--border-default: 6px; 
+    --nes-core-color-blue-50: rgba(239, 246, 255, 1);
+    --nes-core-color-blue-100: rgba(222, 237, 255, 1);
+    --nes-core-color-blue-200: rgba(191, 219, 254, 1);
+    --nes-core-color-blue-300: rgba(147, 197, 253, 1);
+    --nes-core-color-blue-400: rgba(97, 166, 251, 1);
+    --nes-core-color-blue-500: rgba(52, 138, 244, 1);
+    --nes-core-color-blue-600: rgba(24, 109, 220, 1);
+    --nes-core-color-blue-700: rgba(31, 85, 178, 1);
+    --nes-core-color-blue-800: rgba(30, 68, 141, 1);
+    --nes-core-color-blue-900: rgba(25, 51, 112, 1);
+    --nes-core-color-blue-950: rgba(24, 34, 63, 1);
+
+    --nes-core-font-weight-normal: 400;
+    --nes-core-font-weight-demi: 550;
+    --nes-core-font-weight-bold: 700;
+
+    --nes-core-border-radius-25: 1px;
+    --nes-core-border-radius-75: 3px;
+    --nes-core-border-radius-150: 6px;
+    --nes-core-border-radius-300: 12px;
+    --nes-core-border-radius-400: 16px;
+    --nes-core-border-radius-full: 9999px;
+
+    --nes-core-max-width-2xl: 1280px;
+    --nes-core-max-width-xl: 896px;
+    --nes-core-max-width-lg: 512px;
+    --nes-core-max-width-xs: 320px;
 }
 
 /* Styling */ 
 body {
     font-family: 'roboto', 'sans-serif'; 
+	display: flex; 
+	flex-direction: column; 
+	margin: 0;
+	align-items: center;
+	background-color: var(--cc-black-95);
 }
 
-body > div {
-	background-color: white; 
-	height: 10vh; 
+body > div { 
+	background-color: var(--nes-core-color-blue-700); 
+	color: var(--nes-core-color-red); 
+	width: 100%;
+	padding: 0; 
 }
+
+body > div h2 {
+	color: var(--cc-white); 
+	margin: 0.5em auto; 
+	max-width: var(--nes-core-max-width-2xl);
+}
+
+body form > div {
+	background-color: white; 
+	padding: 1em; 
+	border-radius: var(--nes-core-border-radius-150); 
+	border-top: 8px var(--nes-core-color-yellow-300) solid; 
+	margin: 1em 0 0 0;
+	display: flex; 
+	flex-direction: column; 
+	gap: 1.5em;
+}
+
+body form > div h1 {
+	font-weight: var(--nes-core-font-weight-demi);
+	margin: 0; 
+}
+
+body form > div p {
+	margin: 0; 
+}
+
 
 form {
-	max-width: 1200px; 
-	margin: 0 1em; 
+	max-width: var(--nes-core-max-width-xl);
+	width: 100%; 
+	margin: 0;
+	border: 1px var(--color-grey); 
+	border-radius: var(--nes-core-border-radius-150); 
+	display: flex; 
+	flex-direction: column; 
+	gap: 1.5em;
 }
 
 .hidden {
@@ -88,16 +116,17 @@ form > fieldset {
 	display: flex; 
 	flex-direction: column; 
 	gap: 1em;
+	border: none; 
+	margin: 0; 
+	padding: 1em; 
+	background-color: white; 
+	border-radius: var(--nes-core-border-radius-150); 
 }
 
 fieldset:has(> label input[type="radio"]) {
-	display: flex; 
-	flex-direction: row; 
-	gap: 0.5em; 
-}
-
-fieldset:has(> label input[type="radio"]) legend {
-	margin-bottom: 0.3em;
+	border: none; 
+	padding: 0; 
+	margin: 0; 
 }
 
 fieldset:has(> input[type="radio"]) {
@@ -107,35 +136,18 @@ fieldset:has(> input[type="radio"]) {
 }
 
 fieldset input[type="text"], input[type="date"], fieldset input[type="number"] {
-	border: 1px solid var(--color-grey);
-	border-radius: var(--border-default); 
+	border: 1px solid var(--cc-black-95);
+	border-radius: var(--nes-core-border-radius-150); 
 	height: 2.5em;
 	width: 100%;
 }
 
-/* fieldset input[type="radio"] {
-	display: none; 
-} */
-
-/* fieldset label:has(input[type="radio"]) {
-	color: #000; 
-	display: flex; 
-	flex-direction: row-reverse; 
-	justify-content: start;
-	width: 4em; 
-	padding: 8px; 
-	border-radius: var(--border-default); 
-	border: 2px solid var(--color-grey); 
-} */
-
 fieldset label:has(input[type="radio"]:checked) {
 	border: none; 
-	background: var(--color-secondary); 
-	color: white; 
 }
 
 fieldset label {
-	color: var(--color-secondary); 
+	color: var(--nes-core-color-blue-900); 
 	font-size: var(--text-s);
 	display: flex; 
 	flex-direction: column; 
@@ -144,13 +156,31 @@ fieldset label {
 	width: 100%; 
 }
 
+fieldset label:has(input[type="radio"]) {
+	color: var(--nes-core-color-blue-900); 
+	font-size: var(--text-s);
+	display: block; 
+}
+
+input:user-invalid {
+	border: 2px red solid; 
+}
+
+input:user-valid {
+	border: 2px yellowgreen solid; 
+}
+
+#testament {
+	border: none; 
+}
+
 button {
-	background-color: var(--color-secondary-shade); 
+	background-color: var(--nes-core-color-blue-700); 
 	border: none; 
 	padding: 8px; 
 	color: white; 
 	font-size: var(--body-m);
-	border-radius: var(--border-default); 
+	border-radius: var(--nes-core-border-radius-150); 
 }
 
 /* input:invalid {
@@ -160,6 +190,14 @@ button {
 form > fieldset:first-of-type div {
 	display: flex; 
 	gap: 1em;
+}
+
+section {
+	background-color: white; 
+}
+
+section fieldset {
+	border: none; 
 }
 
 section div:has(input[type="text"]) {

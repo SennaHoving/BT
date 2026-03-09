@@ -186,7 +186,7 @@ function createNewVerkrijger() {
     const remove = document.createElement("button") 
     remove.setAttribute("type", "button") 
     remove.classList.add("remove")
-    remove.innerText = "remove"
+    remove.innerText = "Verwijder"
 
     newFieldset.appendChild(labelBsn)
     newFieldset.appendChild(inputBsn) 
