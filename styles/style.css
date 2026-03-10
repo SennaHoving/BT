@@ -239,6 +239,12 @@ section div:has(input[type="text"]) {
 	bottom: 0; 
 }
 
+#add {
+	position: absolute; 
+	bottom: 1em; 
+	right: 1em; 
+}
+
 /* temp */ 
 /* .verkrijgers {
 	display: none;

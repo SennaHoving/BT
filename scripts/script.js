@@ -1,18 +1,16 @@
-const form = document.querySelector("form")
-const bsnField = document.querySelectorAll(".bsn") 
-const textFields = document.querySelectorAll(".text_only")
-const verkrijger = document.getElementById("verkrijger")
-const addVerkrijger = document.querySelector("#verkrijger button")
-const overlijdensdatum = document.getElementById("overlijdensdatum")
 const inputs = document.querySelectorAll("input"); 
+const form = document.querySelector("form");
 
 const template = document.getElementById("verkrijger_template");
 const container = document.getElementById("verkrijger"); 
 const legend = document.querySelector("verkrijger_template > fieldset legend"); 
 let number = 1;  
 
-const date = new Date().toISOString().slice(0, 10)
+const verkrijger = document.getElementById("verkrijger");
+const addVerkrijger = document.querySelector("#verkrijger button");
 
+const date = new Date().toISOString().slice(0, 10);
+const overlijdensdatum = document.getElementById("overlijdensdatum");
 
 
 //Local storage
@@ -82,10 +80,16 @@ document.addEventListener("change", function(e) {
     }
 })
 
-/* template */
+//Template
 function loadVerkrijgers() {
     const clone = template.content.cloneNode(true); 
     clone.querySelector("fieldset legend").textContent = `verkrijger ${number}`
+
+    const remove = clone.querySelector("button")
+    remove.addEventListener("click", () => {
+        remove.closest("fieldset").remove();
+    })
+
     container.appendChild(clone); 
     number++; 
 }
@@ -96,13 +100,7 @@ addVerkrijger.addEventListener("click", () => {
     loadVerkrijgers();
 })
 
-
-form.addEventListener("click", (e) => {
-    if(e.target.classList.contains("remove"))
-        e.target.closest("fieldset").remove();
-})
-
-//Load date
+//Load date today
 function loadDate() {
     overlijdensdatum.setAttribute("max", date)
 }
