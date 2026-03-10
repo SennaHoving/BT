@@ -3,14 +3,15 @@ const bsnField = document.querySelectorAll(".bsn")
 const textFields = document.querySelectorAll(".text_only")
 const verkrijger = document.getElementById("verkrijger")
 const addVerkrijger = document.querySelector("#verkrijger button")
-let number = 1; 
-const date = new Date().toISOString().slice(0, 10)
 const overlijdensdatum = document.getElementById("overlijdensdatum")
 const inputs = document.querySelectorAll("input"); 
 
 const template = document.getElementById("verkrijger_template");
 const container = document.getElementById("verkrijger"); 
 const legend = document.querySelector("verkrijger_template > fieldset legend"); 
+let number = 1;  
+
+const date = new Date().toISOString().slice(0, 10)
 
 
 
@@ -81,18 +82,20 @@ document.addEventListener("change", function(e) {
     }
 })
 
-/* template */ 
+/* template */
 function loadVerkrijgers() {
     const clone = template.content.cloneNode(true); 
     clone.querySelector("fieldset legend").textContent = `verkrijger ${number}`
     container.appendChild(clone); 
+    number++; 
 }
 
 loadVerkrijgers(); 
 
 addVerkrijger.addEventListener("click", () => {
-    createNewVerkrijger()
+    loadVerkrijgers();
 })
+
 
 form.addEventListener("click", (e) => {
     if(e.target.classList.contains("remove"))
