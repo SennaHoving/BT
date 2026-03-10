@@ -168,49 +168,51 @@
                 </label>
             </fieldset> 
 
-            <fieldset id="verkrijger" class="hidden">
-                <fieldset>
-                    <legend>Verkrijger 1</legend>
-
-                    <label for="bsn">Bsn overledene
-                        <input type="text" class="bsn" required id="bsn" inputmode="numeric" minlength="9" maxlength="9"/>
-                    </label>
-                    <div>
-                        <label for="voorletter(s)">voorletter(s)
-                            <input type="text" required id="voorletter(s)" class="text_only"/>
-                        </label>
-                        <label for="tussenvoegsel(s)">tussenvoegsel(s)
-                            <input type="text" required id="tussenvoegsel(s)" class="text_only"/>
-                        </label>
-                    </div>
-                    <label for="achternaam">achternaam
-                        <input type="text" required id="achternaam" class="text_only"/> 
-                    </label>
-
+            <fieldset id="verkrijger">
+                <template id="verkrijger_template">
                     <fieldset>
-                        <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</legend>
-                        <label>
-                            <input type="radio" value="Nee" name="vermogen"/> 
-                            Nee
-                        </label>
-                        <label>
-                            <input type="radio" value="Ja" name="vermogen"/> 
-                            Ja
-                        </label>
-                    </fieldset>
+                        <legend>Verkrijger 1</legend>
 
-                    <fieldset>
-                        <legend>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
-                        <label>
-                            <input type="radio" value="Nee" name="portie"/> 
-                            Nee
+                        <label for="bsn">Bsn overledene
+                            <input type="text" class="bsn" required id="bsn" inputmode="numeric" minlength="9" maxlength="9"/>
                         </label>
-                        <label>
-                            <input type="radio" value="Ja"name="portie"/> 
-                            Ja
+                        <div>
+                            <label for="voorletter(s)">voorletter(s)
+                                <input type="text" required id="voorletter(s)" class="text_only"/>
+                            </label>
+                            <label for="tussenvoegsel(s)">tussenvoegsel(s)
+                                <input type="text" required id="tussenvoegsel(s)" class="text_only"/>
+                            </label>
+                        </div>
+                        <label for="achternaam">achternaam
+                            <input type="text" required id="achternaam" class="text_only"/> 
                         </label>
+
+                        <fieldset>
+                            <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</legend>
+                            <label>
+                                <input type="radio" value="Nee" name="vermogen"/> 
+                                Nee
+                            </label>
+                            <label>
+                                <input type="radio" value="Ja" name="vermogen"/> 
+                                Ja
+                            </label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
+                            <label>
+                                <input type="radio" value="Nee" name="portie"/> 
+                                Nee
+                            </label>
+                            <label>
+                                <input type="radio" value="Ja"name="portie"/> 
+                                Ja
+                            </label>
+                        </fieldset>
                     </fieldset>
-                </fieldset>
+                </template>
                 <div>
                     <button type="button">Niewe verkrijger</button>
                 </div>
@@ -218,6 +220,6 @@
         </section>
         <button type="submit"></button>
     </form>
+    <script src="scripts/script.js"></script>
 </body>
-<script src="scripts/script.js"></script>
 </html>
