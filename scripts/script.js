@@ -74,7 +74,7 @@ document.addEventListener("change", function(e) {
         if(e.target.value == "Ja") {
             targetId.classList.remove("hidden")
             //maak het deel hierbij ook nog required? 
-        } else {
+        } else if (e.target.value == "Nee") {
             targetId.classList.add("hidden")
         }
     }
@@ -106,3 +106,8 @@ function loadDate() {
 }
 
 loadDate();
+
+const resetButton = document.getElementById("local"); 
+resetButton.addEventListener("click", () => {
+    localStorage.clear();
+})

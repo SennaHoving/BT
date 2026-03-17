@@ -12,17 +12,7 @@
     --cc-black-95: #f2f2f2;
     --cc-white: #fff;
 
-    --color-yellow-50: rgba(252, 246, 232, 1);
-    --color-yellow-100: rgba(250, 239, 199, 1);
-    --color-yellow-200: rgba(247, 224, 146, 1);
-    --color-yellow-300: rgba(244, 205, 86, 1);
-    --color-yellow-400: rgba(238, 180, 8, 1);
-    --color-yellow-500: rgba(214, 149, 0, 1);
-    --color-yellow-600: rgba(182, 117, 0, 1);
-    --color-yellow-700: rgba(138, 96, 0, 1);
-    --color-yellow-800: rgba(100, 74, 7, 1);
-    --color-yellow-900: rgba(72, 57, 19, 1);
-    --color-yellow-950: rgba(41, 37, 15, 1);
+	--color-brand-yellow: rgba(255, 201, 23, 1);
 
     --color-blue-50: rgba(239, 246, 255, 1);
     --color-blue-100: rgba(222, 237, 255, 1);
@@ -36,6 +26,8 @@
     --color-blue-900: rgba(25, 51, 112, 1);
     --color-blue-950: rgba(24, 34, 63, 1);
 
+	--color-red-600: red;
+
     --font-weight-normal: 400;
     --font-weight-demi: 550;
     --font-weight-bold: 700;
@@ -43,7 +35,7 @@
 	--font-size-xs: 0.75em; 
 	--font-size-s: 0.875em; 
 	--font-size-m: 1em; 
-	--font-size-l: 1.125em; 
+	--font-size-l: 1.375em; 
 
     --border-radius-25: 1px;
     --border-radius-75: 3px;
@@ -63,13 +55,22 @@ h1, h2, p, a {
 	margin: 0; 
 }
 
-.hidden {
+fieldset .hidden {
     display: none; 
 }
 
 /* styling form fields */
 fieldset {
-	position: relative; 
+	position: relative;
+	border: none; 
+	padding: 0; 
+	margin: 0; 
+}
+
+/* button {
+	border: none; 
+	border-radius: var(--border-radius-150); 
+	min-width: 80px; 
 }
 
 fieldset legend {
@@ -82,15 +83,6 @@ fieldset legend {
 	color: var(--color-blue-900); 
 	font-size: var(--font-size-l); 
 	font-weight: var(--font-weight-bold);
-}
-
-fieldset:has(> label input[type="radio"]) {
-	display: flex; 
-	flex-direction: column; 
-	gap: 0.5em; 
-	border: none; 
-	padding: 0; 
-	margin: 0; 
 }
 
 fieldset input[type="text"], fieldset input[type="date"], fieldset input[type="number"] {
@@ -112,7 +104,7 @@ label::after {
 label:has(input[type="text"]:user-invalid)::after {
 	content: "dit veld is verkeerd ingevuld";
 	color: #db0029;
-}
+} */
 
 /* general styling */ 
 body {
@@ -122,23 +114,41 @@ body {
 	margin: 0;
 	align-items: center;
 	background-color: var(--cc-black-95);
+	gap: 1em;
 }
 
-/* body > div:first-of-type {
+/* header */ 
+body > div {
+	background-color: var(--color-brand-yellow);
+	width: 100%; 
+}
 
-} */
-
-form > div:first-of-type {
+body > div div:first-of-type {
+	padding: 2em; 
 	display: flex; 
 	flex-direction: column; 
-	gap: 1.5em;
-	background-color: white; 
-	padding: 1em; 
-	border-radius: var(--border-radius-150); 
-	border-top: 8px var(--color-yellow-300) solid; 
-	margin: 1em 0 0 0; 
+	gap: 0.5em;
 }
 
+body > div div:first-of-type h1 {
+	color: var(--color-blue-700);
+	font-size: 2.375rem; 
+	font-weight: var(--font-weight-normal);
+}
+
+body > div div:nth-of-type(2) {
+	width: 100%;
+	background-color: var(--color-red-600);  
+	padding: 0 2em;
+}
+
+body > div div:nth-of-type(2) button {          /* <---  nog werg halen */ 
+	position: absolute; 
+	top: 10%; 
+	right: 1em;
+}
+
+/* ---------- */ 
 form {
 	max-width: var(--max-width-xl);
 	width: 100%; 
@@ -159,73 +169,69 @@ section {
 section > fieldset {
 	display: flex; 	
 	flex-direction: column;
-	gap: 1em; 
+	gap: 1.5em; 
 	background-color: var(--cc-white);
 	margin: 0; 
-	padding: 2em 1em 1em 1em;
+	padding: 4em 1.5em 1.5em 1.5em;
+	border: 1px var(--cc-black-90) solid; 
+	border-radius: var(--border-radius-150); 
+	position: relative; 
 }
 
+section fieldset legend {
+	position: absolute; 
+	top: 1em; 
+	color: var(--color-blue-700); 
+	font-weight: var(--font-weight-demi);
+	font-size: var(--font-size-l);
+	padding-inline: 0;
+}
 
+section > fieldset label:has(input[type="text"]), section > fieldset label:has(input[type="date"]) {
+	display: flex;
+	flex-direction: column; 
+	gap: 0.4em;
+	color: var(--cc-black-10); 
+	font-size: var(--font-size-m);
+	font-weight: var(--font-weight-normal);
 
+	& p {
+		display: none; 
+		color: var(--color-red-600); 
+	}
+}
+
+label:has(input[type="text"]:user-invalid) p {
+	display: contents;
+}
+
+input[type="text"]:user-invalid {
+	border-left-color: var(--color-red-600); 
+	border-left-width: 4px; 
+}
+
+section > fieldset input[type="text"], section > fieldset input[type="date"]{
+	border-radius: var(--border-radius-150); 
+	border: 2px var(--cc-black-80) solid; 
+	min-height: 44px; 
+}
 
 
 
 /* -------- */ 
-fieldset label {
-	color: var(--color-blue-900); 
-	font-size: var(--font-size-m);
-	display: flex; 
-	flex-direction: column; 
-	gap: 0.5em;
-	font-weight: 600; 
-	width: 100%; 
-}
-
-fieldset label:has(input[type="radio"]) {
-	color: var(--color-blue-900); 
-	font-size: var(--text-s);
-	display: block; 
-}
-
-input:user-invalid {
-	border: 2px red solid; 
-}
-
-input:user-valid {
-	border: 2px yellowgreen solid; 
-}
-
-#testament {
-	border: none; 
-}
-
-/* button {
-	background-color: var(--color-blue-700); 
-	border: none; 
-	padding: 8px; 
-	color: white; 
-	font-size: var(--body-m);
-	border-radius: var(--border-radius-150); 
-} */
-
-form > fieldset:first-of-type div {
-	display: flex; 
-	gap: 1em;
-}
-
-section fieldset {
-	border: none; 
-}
-
 section div:has(input[type="text"]) {
 	display: flex; 
 	flex-direction: row; 
 	gap: 1em; 
 }
 
+
 #verkrijger {
 	position: relative; 
-	padding-bottom: 3em;
+	padding-bottom: 5em;
+	display: flex; 
+	flex-direction: column; 
+	gap: 4em; 
 }
 
 #verkrijger > fieldset {
@@ -239,13 +245,20 @@ section div:has(input[type="text"]) {
 	bottom: 0; 
 }
 
-#add {
+#verkrijger fieldset button {
 	position: absolute; 
-	bottom: 1em; 
-	right: 1em; 
+	top: 1em; 
+	right: 1em;
 }
 
-/* temp */ 
-/* .verkrijgers {
-	display: none;
-} */
+#verkrijger #add {
+	position: absolute; 
+	bottom: 1em; 
+	left: 0em; 
+	background-color: var(--color-blue-600); 
+	padding: 1em; 
+	color: var(--cc-white); 
+	font-weight: var(--font-weight-demi);
+	font-size: var(--font-size-m);
+	border-radius: var(--border-radius-300); 
+}
