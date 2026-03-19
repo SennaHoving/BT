@@ -198,6 +198,15 @@ section fieldset fieldset:has(input[type="radio"]) div {
 	gap: 0.5em;
 }
 
+section fieldset fieldset:has(input[type="radio"]) p {
+	display: none; 
+	color: var(--color-red-600); 
+}
+
+section fieldset fieldset:has(input[type="radio"]:user-invalid) p {
+	display: block;
+}
+
 label:has(input[type="radio"]) {
 	border: 1px var(--color-blue-700) solid; 
 	min-width: 44px; 
