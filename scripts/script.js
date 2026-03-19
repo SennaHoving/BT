@@ -83,7 +83,7 @@ const overlijdensdatum = document.getElementById("overlijdensdatum");
 //Template
 function loadVerkrijgers() {
     const clone = template.content.cloneNode(true); 
-    clone.querySelector("fieldset legend").textContent = `verkrijger ${number}`
+    clone.querySelector("summary").textContent = `verkrijger ${number}`
 
     const remove = clone.querySelector("button")
     remove.addEventListener("click", () => {
