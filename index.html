@@ -202,58 +202,6 @@
                 </fieldset> 
 
                 <fieldset id="verkrijger">
-                    <template id="verkrijger_template">
-                        <details open>
-                            <summary>verkrijger 1</summary>
-                            <button type="button" id="remove">Verwijder verkrijger</button>
-                            <fieldset>
-                                <label for="bsn">Bsn overledene
-                                    <input type="text" class="bsn" id="bsn" inputmode="numeric" minlength="9" maxlength="9" aria-describedby="bsnHelp"/>
-                                    <p id="bsnHelp">Vul een geldig bsn in</p>
-                                </label>
-                                <label for="voorletters">Voorletter (1 of meedere) 
-                                    <input type="text" required id="voorletters" class="text_only" aria-describedby="voorletterHelp"/>
-                                    <p id="voorletterHelp">Vul geldige voorletters in</p>
-                                </label>
-                                <label for="tussenvoegsels">Tussenvoegsel (één of meedereder)
-                                    <input type="text" id="tussenvoegsels" class="text_only" aria-describedby="tussenvoegselsHelp"/>
-                                    <p id="tussenvoegselsHelp">Vul geldige tussenvoegsels in</p>
-                                </label>
-                                <label for="achternaam">Achternaam
-                                    <input type="text" required id="achternaam" class="text_only" aria-describedby="achternaamHelp"/> 
-                                    <p id="achternaamHelp">Vul een geldige achternaam in</p>
-                                </label>
-
-                                <fieldset>
-                                    <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</legend>
-                                    <div>
-                                        <label>
-                                            Nee
-                                            <input type="radio" value="Nee" name="vermogen"/> 
-                                        </label>
-                                        <label>
-                                            Ja
-                                            <input type="radio" value="Ja" name="vermogen"/> 
-                                        </label>
-                                    </div>
-                                </fieldset>
-
-                                <fieldset>
-                                    <legend>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
-                                    <div>
-                                        <label>
-                                            Nee
-                                            <input type="radio" value="Nee" name="portie"/>         
-                                        </label>
-                                        <label>
-                                            Ja
-                                            <input type="radio" value="Ja"name="portie"/>  
-                                        </label>
-                                    </div> 
-                                </fieldset>
-                            </fieldset>
-                        </details>
-                    </template>
                     <button type="button" id="add">Niewe verkrijger</button>
                 </fieldset>
             </fieldset>

@@ -4,8 +4,9 @@ const template = document.getElementById("verkrijger_template");
 const container = document.getElementById("verkrijger"); 
 let number = 1;  
 
-const verkrijger = document.getElementById("verkrijger");
 const addVerkrijger = document.querySelector("#verkrijger button");
+const verkrijgersContainer = document.getElementById("verkrijger");
+let aantalVerkijgers = 1; 
 
 const date = new Date().toISOString().slice(0, 10);
 const overlijdensdatum = document.getElementById("overlijdensdatum");
@@ -32,24 +33,67 @@ inputs.forEach((input) => {
     }
 })
 
-//Template
-function loadVerkrijgers() {
-    const clone = template.content.cloneNode(true); 
-    clone.querySelector("summary").textContent = `verkrijger ${number}`
-
-    const remove = clone.querySelector("button")
-    remove.addEventListener("click", () => {
-        remove.closest("fieldset").remove();
-    })
-
-    container.appendChild(clone); 
-    number++; 
-}
-
-loadVerkrijgers(); 
-
+//Dynamische verkrijgers 
 addVerkrijger.addEventListener("click", () => {
-    loadVerkrijgers();
+    const nieuweVerkrijger = document.createElement("fieldset:"); 
+    nieuweVerkrijger.innerHTML = `
+        <legend id="${aantalVerkijgers}">Verkrijger ${aantalVerkijgers}</legend>
+
+        <label for="bsn-${aantalVerkijgers}">
+            Bsn overledene
+            <input type="text" class="bsn" required id="bsn-${aantalVerkijgers}" inputmode="numeric" minlength="8" maxlength="9" pattern="[0-9]{9}" aria-describedby="bsnHelp"/>
+            <p id="bsnHelp">Vul een geldig BSN-nummer in van 8 of 9 nummers</p>
+        </label>
+
+        <label for="voorletters-${aantalVerkijgers}">
+            Voorletter (1 of meedere) 
+            <input type="text" required id="voorletters-${aantalVerkijgers}" class="text_only" aria-describedby="voorletterHelp"/>
+            <p id="voorletterHelp">Vul geldige voorletters in</p>
+        </label>
+
+        <label for="tussenvoegsels-${aantalVerkijgers}">
+            Tussenvoegsel (één of meedereder)
+            <input type="text" id="tussenvoegsels-${aantalVerkijgers}" class="text_only" aria-describedby="tussenvoegselsHelp"/>
+            <p id="tussenvoegselsHelp">Vul geldige tussenvoegsels in</p>
+        </label>
+
+        <label for="achternaam-${aantalVerkijgers}">
+            Achternaam
+            <input type="text" required id="achternaam-${aantalVerkijgers}" class="text_only" aria-describedby="achternaamHelp"/> 
+            <p id="achternaamHelp">Vul een geldige achternaam in</p>
+        </label>
+
+        <fieldset>
+            <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</legend>
+            <div>
+                <label>
+                    Nee
+                    <input type="radio" value="Nee-${aantalVerkijgers}" name="vermogen-${aantalVerkijgers}"/> 
+                </label>
+                <label>
+                    Ja
+                    <input type="radio" value="Ja-${aantalVerkijgers}" name="vermogen-${aantalVerkijgers}"/> 
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
+            <div>
+                <label>
+                    Nee
+                    <input type="radio" value="Nee-${aantalVerkijgers}" name="portie-${aantalVerkijgers}"/>         
+                </label>
+                <label>
+                    Ja
+                    <input type="radio" value="Ja-${aantalVerkijgers}" name="portie-${aantalVerkijgers}"/>  
+                </label>
+            </div> 
+        </fieldset>
+    `;
+
+    verkrijgersContainer.appendChild(nieuweVerkrijger);
+    aantalVerkijgers++; 
 })
 
 //Load date today
@@ -59,7 +103,7 @@ function loadDate() {
 
 loadDate();
 
-const resetButton = document.getElementById("local"); 
-resetButton.addEventListener("click", () => {
-    localStorage.clear();
-})
+// const resetButton = document.getElementById("local"); 
+// resetButton.addEventListener("click", () => {
+//     localStorage.clear();
+// })
