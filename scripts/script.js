@@ -35,7 +35,7 @@ inputs.forEach((input) => {
 
 //Dynamische verkrijgers 
 addVerkrijger.addEventListener("click", () => {
-    const nieuweVerkrijger = document.createElement("fieldset:"); 
+    const nieuweVerkrijger = document.createElement("fieldset"); 
     nieuweVerkrijger.innerHTML = `
         <legend id="${aantalVerkijgers}">Verkrijger ${aantalVerkijgers}</legend>
 
@@ -64,7 +64,7 @@ addVerkrijger.addEventListener("click", () => {
         </label>
 
         <fieldset>
-            <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</legend>
+            <legend>Krijgt verkrijger ${aantalVerkijgers} waarvoor u geen aangifte doet het hele vermogen?</legend>
             <div>
                 <label>
                     Nee
@@ -78,7 +78,7 @@ addVerkrijger.addEventListener("click", () => {
         </fieldset>
 
         <fieldset>
-            <legend>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
+            <legend>Doet verkrijger ${aantalVerkijgers} een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
             <div>
                 <label>
                     Nee

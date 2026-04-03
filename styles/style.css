@@ -68,6 +68,7 @@ body {
 	align-items: center;
 	background-color: var(--cc-black-95);
 	gap: 1.5em;
+	overflow-x: hidden;
 }
 
 /* header */ 
@@ -260,11 +261,11 @@ section:first-of-type fieldset:nth-of-type(2) > div fieldset:first-of-type:has(i
 	padding-bottom: 5em;
 	display: flex; 
 	flex-direction: column; 
-	gap: 0; 
 
 	legend {
 		font-weight: var(--font-weight-bold); 
 		color: var(--color-blue-700); 
+		font-size: var(--font-size-l);
 	}
 }
 
