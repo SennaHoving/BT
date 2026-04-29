@@ -261,12 +261,68 @@ section:first-of-type fieldset:nth-of-type(2) > div fieldset:first-of-type:has(i
 	padding-bottom: 5em;
 	display: flex; 
 	flex-direction: column; 
+	gap: 3em;
+}
 
-	legend {
-		font-weight: var(--font-weight-bold); 
-		color: var(--color-blue-700); 
-		font-size: var(--font-size-l);
+/* #verkrijger > fieldset {
+	margin-bottom: 2em;
+} */
+
+#verkrijger > div {
+	height: 2px; 
+	width: 100%; 
+	background-color: var(--color-blue-700);
+}
+
+#verkrijger fieldset {
+	gap: 1em;
+	position: relative; 
+}
+
+#verkrijger > fieldset:not(:first-of-type) {
+	margin-top: 2em;
+}
+
+#verkrijger > fieldset:not(:first-of-type) > div {
+	height: 2px; 
+	width: 100%; 
+	background-color: var(--color-blue-700);
+	margin: 1em 0; 
+
+	position: absolute; 
+	top: -5.5em;
+}
+
+#verkrijger > fieldset > button {
+	position: absolute; 
+	right: 0; 
+	top: -2.7em; 
+
+
+	background: none; 
+	border: none; 
+	border-radius: 99em;
+	width: 3.5em; 
+	height: 3.5em;
+
+	&:hover, &:focus {
+		background-color: var(--cc-black-90);
 	}
+
+	&:active {
+		background-color: var(--color-blue-700);
+	}
+}
+
+#verkrijger > fieldset > button img {
+	width: 1.7em; 
+	height: auto;
+}
+
+#verkrijger > fieldset > legend {
+	font-weight: var(--font-weight-bold); 
+	color: var(--color-blue-700); 
+	font-size: var(--font-size-l);
 }
 
 section:nth-of-type(2) > fieldset fieldset:first-of-type:has(input[value="Nee"]:checked) + fieldset {

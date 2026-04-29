@@ -37,7 +37,12 @@ inputs.forEach((input) => {
 addVerkrijger.addEventListener("click", () => {
     const nieuweVerkrijger = document.createElement("fieldset"); 
     nieuweVerkrijger.innerHTML = `
+        <div></div>
+
         <legend id="${aantalVerkijgers}">Verkrijger ${aantalVerkijgers}</legend>
+        <button id="remove-${aantalVerkijgers}" type="button">
+            <img src="./assets/remove.svg" alt="remove"/>
+        </button>
 
         <label for="bsn-${aantalVerkijgers}">
             Bsn overledene
@@ -92,9 +97,19 @@ addVerkrijger.addEventListener("click", () => {
         </fieldset>
     `;
 
+
     verkrijgersContainer.appendChild(nieuweVerkrijger);
+
+    const removeBtn = nieuweVerkrijger.querySelector(`#remove-${aantalVerkijgers}`);
+    removeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        nieuweVerkrijger.remove();  
+    });
+
     aantalVerkijgers++; 
 })
+
+
 
 //Load date today
 function loadDate() {
