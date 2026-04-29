@@ -11,6 +11,9 @@ let aantalVerkijgers = 1;
 const date = new Date().toISOString().slice(0, 10);
 const overlijdensdatum = document.getElementById("overlijdensdatum");
 
+const bsn = document.getElementById("bsn"); 
+const bsnHelp = document.getElementById("bsnHelp"); 
+
 
 //Local storage
 inputs.forEach((input) => {
@@ -31,6 +34,8 @@ inputs.forEach((input) => {
         const ant = localStorage.getItem(input.id);
         input.value = ant; 
     }
+
+    updateBSN()
 })
 
 //Dynamische verkrijgers 
@@ -115,3 +120,33 @@ function loadDate() {
 }
 
 loadDate();
+
+//BSN 11 proef 
+function isBsnProef(bsn) {
+    //Add 0 is bsn = 8
+    bsn = bsn.padStart(9, '0');
+
+    let som = 0;
+
+    for (let i = 0; i < 9; i++) {
+        let cijfer = parseInt(bsn[i]);
+        let gewicht = (i === 8) ? -1 : (9 - i);
+
+        som += cijfer * gewicht;
+    }
+
+    console.log(som % 11 === 0); 
+    return som % 11 === 0;
+}
+
+function updateBSN() {
+    if (isBsnProef(bsn.value) == true) {
+        bsnHelp.textContent = "Geldig BSN nummer"; 
+        bsnHelp.classList.add("valid");
+    } else {
+        bsnHelp.classList.remove("valid");
+        bsnHelp.textContent = "Vul een geldig BSN-nummer in van 8 of 9 nummers"; 
+    }
+}
+
+bsn.addEventListener("blur", updateBSN); 

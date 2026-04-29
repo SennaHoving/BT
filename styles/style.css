@@ -174,9 +174,19 @@ section > fieldset label:has(input[type="text"]), section > fieldset label:has(i
 	}
 }
 
-label:has(input[type="text"]:user-invalid) p {
+label:has(input[type="text"]:user-invalid) p:first-of-type {
 	display: contents;
 }
+
+#bsnHelp.valid {
+	display: contents;
+	color: #008000; 
+}
+
+/* label:has(input[type="text"]:user-valid) p:nth-of-type(2) {
+	display: contents;
+	color: #008000; 
+} */
 
 input[type="text"]:user-invalid {
 	border-left-color: var(--color-red-600); 
