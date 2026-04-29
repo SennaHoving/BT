@@ -109,16 +109,9 @@ addVerkrijger.addEventListener("click", () => {
     aantalVerkijgers++; 
 })
 
-
-
 //Load date today
 function loadDate() {
     overlijdensdatum.setAttribute("max", date)
 }
 
 loadDate();
-
-// const resetButton = document.getElementById("local"); 
-// resetButton.addEventListener("click", () => {
-//     localStorage.clear();
-// })
